@@ -1,1 +1,18 @@
-hola 
+Comentarios en SQL 
+
+Opcion 1: Para comentarios de una linea, se utilizan dos guiones y un espacio.
+
+    Ejemplo : 
+    -- Esta linea es un comentario 
+    --Esta linea NO es un comentario
+
+Opcion 2: Comentariosde multiples lineas /* */
+
+    Ejemplo :
+        /*
+        Este es un comentario
+        de multiples lineas
+        */
+
+Es importante usar comentarios para explicar el codigo, especialmente cuando el proposito del codigo no es inmediantemente obvio, o para explicar el
+"Por que" detras de ciertas decisiones de diseño.

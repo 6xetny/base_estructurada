@@ -16,3 +16,7 @@ Opcion 2: Comentariosde multiples lineas /* */
 
 Es importante usar comentarios para explicar el codigo, especialmente cuando el proposito del codigo no es inmediantemente obvio, o para explicar el
 "Por que" detras de ciertas decisiones de diseño.
+
+-- USE en SQL
+
+El comando USE se utiliza para seleccionar la base de datos

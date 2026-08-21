@@ -29,3 +29,14 @@ El comando DROP DATABASE sirve para eliminar una base de datos.
 
 Ejemplo: DROP DATABASE (database);
 
+-- Tipos de Datos en SQL
+En SQL, los tipos de datos se clasifican en varias categorias, segun el tipo de valor que almacenan. 
+
+Tipo; TINYINT       Tamaño; 1 byte       Descripcion; Entero muy pequeño (-128 a 127)
+Tipo; SMALLINT      Tamaño; 2 byte       Descripcion; Entero pequeño
+Tipo; MEDIUMUT      Tamaño; 3 byte       Descripcion; Entero Mediano 
+Tipo; INT O INTEGER Tamaño; 4 byte       Descripcion; Entero Estandar 
+Tipo; BIGINT        Tamaño; 8 byte       Descripcion; Entero muy Grande
+
+
+

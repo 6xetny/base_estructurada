@@ -21,8 +21,11 @@ Es importante usar comentarios para explicar el codigo, especialmente cuando el 
 
 El comando USE se utiliza para seleccionar la base de datos
 
+Ejemplo: USE empresa;
+
 -- DROP DATABASE en SQL
 
 El comando DROP DATABASE sirve para eliminar una base de datos. 
 
 Ejemplo: DROP DATABASE (database);
+

@@ -38,5 +38,34 @@ Tipo; MEDIUMUT      Tamaño; 3 byte       Descripcion; Entero Mediano
 Tipo; INT O INTEGER Tamaño; 4 byte       Descripcion; Entero Estandar 
 Tipo; BIGINT        Tamaño; 8 byte       Descripcion; Entero muy Grande
 
+-- CREATE en SQL
+CREATE TABLE nombre_tabla
+(
+    nombre_columna1 tipo_de_dato [restricciones],
+    nombre_columna2 tipo_de_dato [restricciones],
+    nombre_columna3 tipo_de_dato [restricciones],
+)
 
+-- ALTER en SQL 
+/* Añadir una nueva columna */
+ALTER TABLE nombre_tabla
+    ADD nombre_columna tipo_de_dato [restricciones];
+
+/* Modificar una columna existente */
+ALTER TABLE nombre_tabla
+    ALTER COLUMN nombre_columna nuevo_tipo_de_dato [restricciones];
+
+/* eliminar una columna */
+ALTER TABLE nombre_tabla
+    DROP COLUMN nombre_columna;
+
+Ejemplo prácticos: 
+
+-- Añadir la columna "telefono" a la tabla "t_personal"
+ALTER TABLE t_personal 
+    ADD telefono VARCHAR (20);
+
+-- eliminar la columna "fecharegistro" de la tabla "t_personal"
+ALTER TABLE t_personal
+    DROP COLUMN fecharegistro;
 

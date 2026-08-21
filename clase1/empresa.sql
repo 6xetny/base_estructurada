@@ -31,3 +31,11 @@ CREATE TABLE t_producto
     stock INT DEFAULT 0,
     fechacreacion DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Añadir la columna "telefono" a la tabla "t_personal"
+ALTER TABLE t_personal 
+    ADD telefono VARCHAR (20);
+
+-- eliminar la columna "fecharegistro" de la tabla "t_personal"
+ALTER TABLE t_personal
+    DROP COLUMN fecharegistro;

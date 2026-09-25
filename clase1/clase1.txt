@@ -69,3 +69,93 @@ ALTER TABLE t_personal
 ALTER TABLE t_personal
     DROP COLUMN fecharegistro;
 
+/* consultas a indices: los indices son fundamentales para el rendimiento de las 
+consultas. Para listar los indices de una tabla, puede consultar vistas "statics"
+
+SELECT index_name,
+       column_name,
+       non_unique,
+       seq_in_index
+FROM   information_schema.statistics
+WHERE  table_schema = 'esquema' AND table_name = 't_personal';
+*/
+
+-- El comando "SHOW INDEX" ofrece una salida similar
+
+Ejemplo: 
+SHOW INDEX
+FROM t_personal
+FROM esquema;
+
+-- Consultas a restricciones (Constraints)
+Las restricciones aseguran la integridad de los datos. Para obtener informacion
+sobre las restricciones de una tabla, como claves primarias, claves foraneas y otras,
+se puede utilizar en las siguientes consultas.
+
+SELECT
+   constraint_name,
+   constraint_type
+FROM 
+   information_schema.table_constraints 
+WHERE
+   table_schema='mi_base_de_datos' AND
+   table_name='mi_tabla';
+
+Ejemplo:
+SELECT
+   constraint_name,
+   constraint_type
+FROM 
+   information_schema.table_constraints 
+WHERE
+   table_schema='esquema' AND
+   table_name='t_personal';
+
+-- Detalles claves Foraneas 
+Para obtener informacion detallada sobre las claves foraneas, incluyendo
+las tablass y columnas referenciadas.
+
+SELECT 
+    k.constraint_name,
+    k.column_name,
+    k.referenced_column_name
+FROM
+    information_schema.key_column_usage as K 
+JOIN
+    information_schema.table_constraints as t 
+    ON k.constraint_name=t.constraint_name
+    AND k.table_schema=t.table_schema
+WHERE 
+    t.constraint_type='FOREIGN KEY'
+    AND k.table_schema='mi_base_de_datos'
+    AND k.table_name='mi_tabla';
+
+Ejemplo:
+SELECT 
+    k.constraint_name,
+    k.column_name,
+    k.referenced_column_name
+FROM
+    information_schema.key_column_usage as K 
+JOIN
+    information_schema.table_constraints as t 
+    ON k.constraint_name=t.constraint_name
+    AND k.table_schema=t.table_schema
+WHERE 
+    t.constraint_type='FOREIGN KEY'
+    AND k.table_schema='esquema'
+    AND k.table_name='t_personal';
+
+-- sintaxis para crear vistas
+CREATE VIEW nombre_vista AS 
+    SELECT columnas 
+    FROM tablas 
+    WHERE condiciones;
+
+-- EJEMPLO PRACTICOS 
+Vistas.sql 
+
+-- Crear la base de datos vistas
+DROP DATABASE IF EXISTS vistas;
+CREATE DATABASE vistas;
+USE vistas;

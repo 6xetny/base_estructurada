@@ -201,13 +201,9 @@ SELECT * FROM t_cotizacion;
 
 -- ejercicio 8 
 CREATE INDEX i_producto_marca ON t_producto (marca);
-SHOW INDEX FROM t_producto; 
-
 CREATE INDEX i_vendedor_apellido ON t_vendedor (apellido);
-SHOW INDEX FROM t_vendedor;
+
 -- ejercicio 9 
 CREATE INDEX i_cliente_comuna_tipo ON t_cliente (comuna, tipo);
-SHOW INDEX FROM t_cliente;
 -- Ejercicio 10 
 CREATE INDEX  i_venta_medio_pago_fecha ON t_venta(medio_pago, fecha);
-SHOW INDEX FROM t_venta;

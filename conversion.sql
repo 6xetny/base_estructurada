@@ -63,7 +63,7 @@ ORDER BY CAST(precio AS DECIMAL(10,2)) ASC;
 
 -- Ejercicio 4: Genere una salida de la tabla ventas con el producto, el precio con el simbolo "$", la cantidad y la fecha en formato dd/mm/aaaa
 SELECT producto, 
-       CONCAT('$', CAST(precio AS DECIMAL(10,2))) AS precio_formateado,
+       CONCAT('$', CAST(precio AS DECIMAL(10,2))) AS precio_formato,
        CAST(cantidad AS UNSIGNED) AS cantidad_numerica,
-       DATE_FORMAT(CAST(fecha_venta AS DATE), '%d/%m/%Y') AS fecha_formateada
+       DATE_FORMAT(CAST(fecha_venta AS DATE), '%d/%m/%Y') AS fecha_formato
 FROM t_venta;
